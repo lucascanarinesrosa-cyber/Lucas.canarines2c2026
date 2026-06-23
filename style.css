@@ -1,0 +1,238 @@
+/* ==========================================================================
+   CONFIGURAÇÕES GERAIS E VARIÁVEIS (DESIGN SYSTEM)
+   ========================================================================== */
+:root {
+    /* Paleta Inspirada na Franquia Carros */
+    --vermelho-mcqueen: #dc2626;   /* Vermelho de corrida enérgico */
+    --amarelo-raio: #f59e0b;       /* Dourado/Amarelo dos decalques */
+    --asfalto-escuro: #1e293b;     /* Cinza escuro para cabeçalhos e tabelas */
+    --respiro-neon: #eff6ff;       /* Azul bem claro (UX/Destaques) */
+    --borda-neon: #bfdbfe;         /* Borda para o azul claro */
+    --texto-principal: #334155;    /* Cinza confortável para leitura prolongada */
+    --fundo-pagina: #f8fafc;       /* Off-white sutil, evita fadiga visual */
+    
+    /* Tipografia e Espaçamentos */
+    --fonte-principal: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    --raio-borda: 8px;
+    --sombra-suve: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Reset Técnico Básico */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--fonte-principal);
+    background-color: var(--fundo-pagina);
+    color: var(--texto-principal);
+    line-height: 1.7;
+    padding-bottom: 60px;
+}
+
+/* CONTAINER PRINCIPAL DO POST */
+.container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ==========================================================================
+   CABEÇALHO HERO (BANNER PRINCIPAL)
+   ========================================================================== */
+header {
+    background: linear-gradient(135deg, var(--vermelho-mcqueen) 0%, #b91c1c 60%, var(--asfalto-escuro) 100%);
+    color: #ffffff;
+    padding: 60px 20px;
+    text-align: center;
+    margin-bottom: 40px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    position: relative;
+    border-bottom: 6px solid var(--amarelo-raio);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 12px;
+}
+
+header p {
+    font-size: 1.25rem;
+    color: #fee2e2; /* Vermelho claro para contraste suave */
+    font-weight: 300;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   ELEMENTOS DE TEXTO E SEÇÕES
+   ========================================================================== */
+p {
+    font-size: 1.125rem;
+    margin-bottom: 24px;
+    text-align: justify;
+}
+
+/* Ênfase nas primeiras letras do post (Drop Cap opcional via código) */
+p:first-of-type::first-letter {
+    font-weight: bold;
+    color: var(--vermelho-mcqueen);
+}
+
+h2 {
+    font-size: 1.75rem;
+    color: var(--asfalto-escuro);
+    margin-top: 48px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    
+    /* Detalhe Visual: Linha de corrida vertical na esquerda */
+    border-left: 5px solid var(--vermelho-mcqueen);
+    padding-left: 12px;
+}
+
+/* Bloco de Citação / Frase de Impacto da História */
+blockquote, .highlight-box {
+    background: #ffffff;
+    border-left: 4px solid var(--amarelo-raio);
+    padding: 24px;
+    margin: 32px 0;
+    border-radius: 0 var(--raio-borda) var(--raio-borda) 0;
+    box-shadow: var(--sombra-suve);
+}
+
+blockquote p, .highlight-box p {
+    font-style: italic;
+    font-size: 1.2rem;
+    color: #475569;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* ==========================================================================
+   TABELA DE PERFORMANCE TÉCNICA (LAYOUT LIMPO)
+   ========================================================================== */
+.table-container {
+    overflow-x: auto;
+    margin: 32px 0;
+    border-radius: var(--raio-borda);
+    box-shadow: var(--sombra-suve);
+    border: 1px solid #e2e8f0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    text-align: left;
+}
+
+th {
+    background-color: var(--asfalto-escuro);
+    color: #ffffff;
+    padding: 16px;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+}
+
+td {
+    padding: 16px;
+    font-size: 1rem;
+    border-bottom: 1px solid #edf2f7;
+    color: #475569;
+}
+
+tr:nth-child(even) {
+    background-color: #f8fafc;
+}
+
+tr:hover {
+    background-color: #f1f5f9; /* Efeito hover sutil nas linhas */
+}
+
+/* Coluna de especificações em negrito */
+td:first-child {
+    font-weight: 600;
+    color: var(--asfalto-escuro);
+    width: 30%;
+}
+
+/* Formatação especial para termos matemáticos/fórmulas inline (Ex: 200 mph) */
+.math {
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-weight: bold;
+    color: var(--vermelho-mcqueen);
+    padding: 0 4px;
+}
+
+/* ==========================================================================
+   CARDS DE RESPIRO / INTERATIVIDADE (UX NOTES)
+   ========================================================================== */
+.ux-card, .ux-note {
+    background-color: var(--respiro-neon);
+    border: 1px solid var(--borda-neon);
+    border-left: 4px solid #2563eb; /* Azul UX padrão */
+    padding: 16px 20px;
+    margin: 24px 0;
+    border-radius: var(--raio-borda);
+    font-size: 1rem;
+    color: #1e40af;
+}
+
+.ux-card strong, .ux-note strong {
+    color: #1d4ed8;
+}
+
+/* ==========================================================================
+   LISTA DE CURIOSIDADES (ESTILO TIMELINE / CARDS)
+   ========================================================================== */
+ul {
+    list-style: none;
+    margin: 24px 0;
+}
+
+ul li {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 16px;
+    border-radius: var(--raio-borda);
+    box-shadow: var(--sombra-suve);
+    border-left: 4px solid var(--asfalto-escuro);
+    transition: transform 0.2s ease;
+}
+
+/* Efeito interativo discreto ao passar o mouse nas curiosidades */
+ul li:hover {
+    transform: translateX(4px);
+    border-left-color: var(--vermelho-mcqueen);
+}
+
+ul li strong {
+    display: inline-block;
+    color: var(--vermelho-mcqueen);
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+}
+
+/* ==========================================================================
+   RODAPÉ DO ARTIGO
+   ========================================================================== */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 60px;
+    border-top: 1px solid #e2e8f0;
+    color: #94a3b8;
+    font-size: 0.875rem;
+}
